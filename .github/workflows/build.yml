@@ -48,6 +48,7 @@ jobs:
           chmod +x generate.sh
           ./generate.sh
           ../tmp/geoview -input ../tmp/geosite.dat -type geosite -list "CATEGORY-COMPANIES@cn" -output ./data/company-cn
+          ../tmp/geoview -input ../tmp/geosite.dat -type geosite -list "falungong" -output ./data/falungong 
           ../tmp/geoview -input ../tmp/geosite.dat -type geosite -list "private" -output ./data/private 
           curl https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/steam | grep "@cn" | sed "s/@cn//"  | sed "s/^.*://" > ./data/game-cn
           curl https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.list | grep "^DOMAIN" | sed "s/^DOMAIN.*,//" >> ./data/game-cn
