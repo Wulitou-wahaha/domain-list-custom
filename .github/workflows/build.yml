@@ -50,6 +50,10 @@ jobs:
           ../tmp/geoview -input ../tmp/geosite.dat -type geosite -list "CATEGORY-COMPANIES@cn" -output ./data/company-cn
           ../tmp/geoview -input ../tmp/geosite.dat -type geosite -list "falungong" -output ./data/falungong 
           ../tmp/geoview -input ../tmp/geosite.dat -type geosite -list "private" -output ./data/private 
+          ../tmp/geoview -input ../tmp/geosite.dat -type geosite -list "spotify" -output ./data/spotify 
+          curl https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/threads > ./data/threads          
+          curl https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/spotify | sed "s/@ads//"  | sed "s/^.*://" > ./data/Spotify
+          curl https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/facebook | sed "s/@ads//"  | sed "s/^.*://" > ./data/facebook
           curl https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/steam | grep "@cn" | sed "s/@cn//"  | sed "s/^.*://" > ./data/game-cn
           curl https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.list | grep "^DOMAIN" | sed "s/^DOMAIN.*,//" >> ./data/game-cn
           curl https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/category-game-platforms-download | grep "@cn" | sed "s/@cn//"  | sed "s/^.*://" >> ./data/game-cn
