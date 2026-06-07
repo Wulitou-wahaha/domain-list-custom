@@ -57,7 +57,7 @@ jobs:
 
       - name: Get dependencies and run
         run: |
-          go run ./ --datapath=./media/data --exportlists="game-cn,media,company-cn" --excludeattrs="" --togfwlist="steam,youtube"
+          go run ./ --datapath=./media/data --exportlists="game-cn,media,company-cn" --excludeattrs="" --togfwlist="steam"
       
       - name: Generate sha256 hashsum
         run: |
