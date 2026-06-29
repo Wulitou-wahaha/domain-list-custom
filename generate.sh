@@ -12,8 +12,9 @@ BEGIN {
     exclude_services["Google Search"] = 1
     
     # 3. 需要自立门户、独立导出为文件的服务名
-    standalone_services["Steam Store"] = 1
     standalone_services["Youtube"] = 1
+    standalone_services["Instagram"] = 1
+    standalone_services["Steam Store"] = 1
     
     # 4. 【新增】国家/地区名字简化映射表 (在这里添加你的缩写规则)
     alias_map["Taiwan"] = "TW"
