@@ -16,7 +16,7 @@ BEGIN {
     standalone_services["Instagram"] = 1
     standalone_services["Steam Store"] = 1
     
-    # 4. 【新增】国家/地区名字简化映射表 (在这里添加你的缩写规则)
+    # 4. 国家/地区名字简化映射表
     alias_map["Taiwan"] = "TW"
     alias_map["Japan"] = "JP"
     alias_map["Canada"] = "CA"
@@ -79,12 +79,18 @@ BEGIN {
             target_file = current_service
         }
     } else {
-        # 【核心修正】检查当前大分类是否有缩写别名
         if (current_category in alias_map) {
             target_file = alias_map[current_category]  # 使用缩写如 TW, JP
         } else {
             target_file = current_category             # 没找到缩写则沿用原名
         }
+    }
+
+    # 【新增】针对 Japan (JP) 追加专属自定义域名，仅写入一次
+    if ("Japan" in alias_map && target_file == alias_map["Japan"] && !japan_extra_added) {
+        print "mgstage.com" >> ("./data/" target_file)
+        print "prestige-av.com" >> ("./data/" target_file)
+        japan_extra_added = 1
     }
 
     # 数据清洗
