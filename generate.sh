@@ -88,6 +88,7 @@ BEGIN {
 
     # 【新增】针对 Japan (JP) 追加专属自定义域名，仅写入一次
     if ("Japan" in alias_map && target_file == alias_map["Japan"] && !japan_extra_added) {
+        print "fanza.jp" >> ("./data/" target_file)
         print "mgstage.com" >> ("./data/" target_file)
         print "prestige-av.com" >> ("./data/" target_file)
         japan_extra_added = 1
